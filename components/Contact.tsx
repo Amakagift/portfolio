@@ -1,34 +1,62 @@
 import React from 'react';
+import { Mail, Linkedin, Download } from 'lucide-react';
+import { motion } from 'framer-motion';
 
-const Contact: React.FC = () => {
+export const Contact: React.FC = () => {
   return (
-    <section id="contact" className="py-24 bg-slate-900 text-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl font-bold mb-6">Let's Build Something Great</h2>
-        <p className="text-slate-400 mb-10 max-w-xl mx-auto">
-          I'm currently open to new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
-        </p>
-        
-        <a 
-          href="mailto:hello@alexsterling.dev"
-          className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-lg text-slate-900 bg-accent hover:bg-sky-400 transition-colors shadow-lg shadow-sky-500/20"
-        >
-          <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-          </svg>
-          Get In Touch
-        </a>
+    <section id="contact" className="py-24 bg-cream relative overflow-hidden scroll-mt-28">
+      {/* Decorative Blob */}
+      <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-mustard/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
-        <div className="mt-16 flex justify-center space-x-8">
-           {['LinkedIn', 'Twitter', 'Medium', 'GitHub'].map(social => (
-             <a key={social} href="#" className="text-slate-400 hover:text-white transition-colors text-sm font-medium">
-               {social}
-             </a>
-           ))}
+      <div className="container mx-auto px-6 md:px-12 relative z-10">
+        <div className="max-w-4xl mx-auto text-center">
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="text-terracotta font-bold uppercase tracking-widest text-sm mb-4 block">Get in touch</span>
+            <h2 className="font-serif text-4xl md:text-6xl font-bold text-deep-green mb-8">
+              Let's talk about <br className="hidden md:block" /> product.
+            </h2>
+            <p className="text-slate-text text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
+              I'm always looking to share ideas within the product space. Whether you have a project in mind, a question about my work, or just want to say hi, I'd love to hear from you!
+            </p>
+
+            <div className="flex flex-col items-center gap-8 mb-12">
+              <a href="mailto:amaka10@gmail.com" className="flex items-center gap-4 group bg-white px-8 py-4 rounded-full shadow-sm hover:shadow-md border border-gray-100 transition-all">
+                <div className="w-10 h-10 rounded-full bg-cream flex items-center justify-center text-deep-green group-hover:bg-terracotta group-hover:text-white transition-all">
+                  <Mail size={20} />
+                </div>
+                <span className="text-xl font-medium text-deep-green group-hover:text-terracotta transition-colors">amakagift10@gmail.com</span>
+              </a>
+              
+              <div className="flex gap-6">
+                {[
+                  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/amaka-madueke/" }
+                ].map((Item, i) => (
+                  <a key={i} href={Item.href} target="_blank" rel="noopener noreferrer" aria-label={Item.label} className="w-14 h-14 rounded-full bg-white border border-gray-100 shadow-sm flex items-center justify-center text-deep-green hover:bg-terracotta hover:text-white hover:border-terracotta hover:-translate-y-1 transition-all duration-300">
+                    <Item.icon size={24} />
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <a 
+              href="https://drive.google.com/file/d/1pP7Kl_C6bDlBneyp3PPwP-oagnHFkMYb/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-10 py-4 bg-deep-green text-white rounded-full font-bold hover:bg-terracotta transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg"
+            >
+              <Download size={22} />
+              Download Resume
+            </a>
+          </motion.div>
+
         </div>
       </div>
     </section>
   );
 };
-
-export default Contact;

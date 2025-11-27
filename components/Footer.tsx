@@ -1,15 +1,21 @@
 import React from 'react';
-import { PM_NAME } from '../constants';
 
-const Footer: React.FC = () => {
+export const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-950 py-8 border-t border-slate-900">
-      <div className="max-w-7xl mx-auto px-4 text-center text-slate-500 text-sm">
-        <p>&copy; {new Date().getFullYear()} {PM_NAME}. All rights reserved.</p>
-        <p className="mt-2">Built with React, Tailwind, and Gemini AI.</p>
+    <footer className="bg-deep-green text-cream py-12 border-t border-white/10">
+      <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="text-center md:text-left">
+          <h3 className="font-serif text-2xl font-bold">Amaka.</h3>
+          <p className="text-white/60 text-sm mt-2">© {new Date().getFullYear()} Amaka Madueke. All rights reserved.</p>
+        </div>
+        
+        <div className="flex gap-8 text-sm font-semibold text-white/80">
+          <a href="#" className="hover:text-mustard transition-colors">Home</a>
+          <a href="#about" className="hover:text-mustard transition-colors">About</a>
+          <a href="#work" className="hover:text-mustard transition-colors">Work</a>
+          <a href="#contact" className="hover:text-mustard transition-colors">Contact</a>
+        </div>
       </div>
     </footer>
   );
 };
-
-export default Footer;

@@ -1,31 +1,30 @@
+import { LucideIcon } from 'lucide-react';
+
+export interface NavItem {
+  label: string;
+  href: string;
+}
+
+export interface Service {
+  title: string;
+  count: number;
+  icon: LucideIcon;
+  color: string;
+}
+
 export interface Project {
-  id: string;
+  id: number;
   title: string;
   role: string;
-  description: string;
-  metrics: string[];
-  tags: string[];
+  problem: string;
+  solution: string;
+  impact: string;
   imageUrl: string;
+  tags: string[];
 }
 
-export interface Experience {
-  id: string;
-  company: string;
-  role: string;
-  period: string;
-  description: string;
-  achievements: string[];
-}
-
-export interface SkillData {
-  subject: string;
-  A: number;
-  fullMark: number;
-}
-
-export interface ChatMessage {
-  id: string;
-  role: 'user' | 'model';
-  text: string;
-  isThinking?: boolean;
+export interface SocialLink {
+  platform: string;
+  url: string;
+  icon: LucideIcon;
 }

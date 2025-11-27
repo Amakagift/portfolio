@@ -1,53 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alex Sterling | Product Manager</title>
+    <title>Amaka Madueke | Senior Product Manager</title>
+    <meta name="description" content="Portfolio of Amaka Madueke, Senior Product Manager in AI & Fintech" />
+    
+    <!-- Fonts: Fraunces (Serif) for character, Mulish (Sans) for readability -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;400;600;700&family=Mulish:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
           extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-            },
             colors: {
-              primary: '#0f172a', // slate-900
-              accent: '#38bdf8', // sky-400
+              cream: '#FDFCF8',
+              'deep-green': '#163832',
+              'forest': '#235347',
+              'terracotta': '#D95D39',
+              'mustard': '#E8B059',
+              'sage': '#EBF0EA',
+              'slate-text': '#4A5568',
+            },
+            fontFamily: {
+              serif: ['Fraunces', 'serif'],
+              sans: ['Mulish', 'sans-serif'],
+            },
+            backgroundImage: {
+              'brush-stroke': "url('https://raw.githubusercontent.com/frontend-assets/brush-stroke.svg')", // Placeholder concept, implemented via SVG in code
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              }
             }
           }
         }
       }
     </script>
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-        background-color: #f8fafc;
-        color: #0f172a;
-      }
-      .hide-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .hide-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-    </style>
   <script type="importmap">
 {
   "imports": {
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
-    "recharts": "https://aistudiocdn.com/recharts@^3.5.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
   }
 }
 </script>
 </head>
-  <body>
+  <body class="bg-cream text-deep-green antialiased overflow-x-hidden selection:bg-terracotta selection:text-white">
     <div id="root"></div>
   </body>
 </html>
